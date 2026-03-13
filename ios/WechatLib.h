@@ -3,7 +3,6 @@
 
 #import <React/RCTBridgeModule.h>
 #import "WXApi.h"
-#import "WechatAuthSDK.h"
 
 // define share type constants
 #define RCTWXShareTypeNews @"news"

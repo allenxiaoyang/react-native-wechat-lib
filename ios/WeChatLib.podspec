@@ -24,14 +24,13 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "weflex" => "fox@sfxh.cc" }
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "11.0"
   s.source       = { :git => "https://github.com/little-snow-fox/react-native-wechat-lib.git", :tag => "master" }
   s.source_files  = "**/*.{h,m}"
   s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency "React"
-  s.vendored_libraries = "libWeChatSDK.a"
+  s.dependency "WechatOpenSDK", "~> 2.0.5"
   s.ios.frameworks = 'SystemConfiguration','CoreTelephony','XCTest','WebKit'
   s.ios.library = 'sqlite3','c++','z'
 

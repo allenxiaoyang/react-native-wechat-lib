@@ -12,7 +12,7 @@ import com.facebook.soloader.SoLoader;
 import pro.aili.temporary.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-// react-native-wechat-lib support (
+// react-native-wechat-open-sdk support (
 import com.wechatlib.WeChatLibPackage;
 // )
 
@@ -30,7 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
 
-          // react-native-wechat-lib support (
+          // react-native-wechat-open-sdk support (
           // Packages that cannot be autolinked yet can be added manually here, for example:
           packages.add(new WeChatLibPackage());
           // )

@@ -1,6 +1,6 @@
 <img height="200" src="./image/weixin.png?raw=true">
 
-# React-Native-Wechat-Lib
+# React-Native-Wechat-Open-SDK
 ![Version](https://img.shields.io/badge/Version-V3.0.4-brightgreen)
 ![npm version](https://img.shields.io/badge/npm-v1.1.24-blue)
 ![Wechat SDK](https://img.shields.io/badge/WechatSDKAndroid-V6.8.20-brightgreen)
@@ -36,7 +36,7 @@
 
 目前最新代码版本为 3.0.x，但 NPM Last 版本暂时只到 1.1.26，因为 **3.0.x 暂时还处于开发阶段**，有小部分功能**未经过测试**。
 
-如果你需要使用 3.0.x 版本，请在 package.json 中加上版本号 **react-native-wechat-lib@3.0.4**，切换前请你清楚了解该版本的风险，该版本为开发版。
+如果你需要使用 3.0.x 版本，请在 package.json 中加上版本号 **react-native-wechat-open-sdk@3.0.4**，切换前请你清楚了解该版本的风险，该版本为开发版。
 
 我会尽快推出 3.0.x 发行版。
 
@@ -61,29 +61,29 @@
 ## 安装
 NPM 安装
 ```sh
-npm install react-native-wechat-lib --save
+npm install react-native-wechat-open-sdk --save
 # 3.0.x 使用3.0.4
-npm install react-native-wechat-lib@3.0.4 --save
+npm install react-native-wechat-open-sdk@3.0.4 --save
 
 # 3.0.0 开始弃用
-react-native link react-native-wechat-lib
+react-native link react-native-wechat-open-sdk
 ```
 源码安装
 ```sh
-git clone https://github.com/little-snow-fox/react-native-wechat-lib
-cd react-native-wechat-lib
+git clone https://github.com/allenxiaoyang/react-native-wechat-open-sdk
+cd react-native-wechat-open-sdk
 npm link
 cd ../my-project
-npm link react-native-wechat-lib
+npm link react-native-wechat-open-sdk
 ```
 源码安装指定版本
 ```sh
-git clone https://github.com/little-snow-fox/react-native-wechat-lib
-cd react-native-wechat-lib
+git clone https://github.com/allenxiaoyang/react-native-wechat-open-sdk
+cd react-native-wechat-open-sdk
 git checkout 1.1.x
 npm link
 cd ../my-project
-npm link react-native-wechat-lib
+npm link react-native-wechat-open-sdk
 ```
 <br>
 
@@ -109,7 +109,7 @@ npm link react-native-wechat-lib
 This method should be called once globally.
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.registerApp('appid', 'universalLink');
 ```
@@ -204,7 +204,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareText({
   text: 'Text content.',
@@ -229,7 +229,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareImage({
   imageUrl: 'https://google.com/1.jpg',
@@ -274,7 +274,7 @@ Return:
 安卓实现分享本地文件需要对工程进行一些配置，详见 [Android 安装](./docs/build-setup-android.md#分享本地文件)
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareFile({
   imageUrl: 'https://sdcard/test.png',
@@ -306,7 +306,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareMusic({
   title: 'Good music.',
@@ -337,7 +337,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareVideo({
   title: 'Interesting video.',
@@ -367,7 +367,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareWebpage({
   title: 'Interesting web.',
@@ -402,7 +402,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.shareMiniProgram({
   title: 'Mini program.',
@@ -431,7 +431,7 @@ Return:
 | errStr  | String | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 WeChat.launchMiniProgram({
   userName: 'gh_d39d10000000',
@@ -467,7 +467,7 @@ Return:
 | errStr  | String    | Error message if any error occurred |
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-open-sdk';
 
 // ios 什么都不填都可以，android可以填写以下假的内容都可以正常运行，具体参数获取可以去看微信文档
 WeChat.chooseInvoice({
@@ -536,7 +536,7 @@ Sends request for proceeding payment, then returns an object:
 
 MIT
 
-Author: [little-snow-fox](https://github.com/little-snow-fox/react-native-wechat-lib)
+Author: [allenxiaoyang](https://github.com/allenxiaoyang/react-native-wechat-open-sdk)
 
 <br>
 

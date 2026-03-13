@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Button, Alert } from 'react-native';
-import { getApiVersion, registerApp, openWXApp, sendAuthRequest, shareText } from 'react-native-wechat-lib';
+import { getApiVersion, registerApp, openWXApp, sendAuthRequest, shareText } from 'react-native-wechat-open-sdk';
 
 export default function App() {
   const [versionNumber, setVersionNumber] = React.useState<string | undefined>();

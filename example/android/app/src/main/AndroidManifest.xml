@@ -22,7 +22,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
-      <!--  react-native-wechat-lib support ( -->
+      <!--  react-native-wechat-open-sdk support ( -->
       <activity
         android:name=".wxapi.WXEntryActivity"
         android:label="@string/app_name"
@@ -33,7 +33,7 @@
       <!-- ) -->
     </application>
 
-    <!--  react-native-wechat-lib support ( -->
+    <!--  react-native-wechat-open-sdk support ( -->
     <queries>
       <package android:name="com.tencent.mm" />
     </queries>

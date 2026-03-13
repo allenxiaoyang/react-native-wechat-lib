@@ -1,6 +1,6 @@
 package pro.aili.temporary.wxapi;
 
-// react-native-wechat-lib support (
+// react-native-wechat-open-sdk support (
 import android.app.Activity;
 import android.os.Bundle;
 import com.wechatlib.WeChatLibModule;

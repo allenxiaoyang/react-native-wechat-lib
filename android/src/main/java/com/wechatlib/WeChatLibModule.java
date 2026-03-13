@@ -52,7 +52,8 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbiz.SubscribeMessage;
 import com.tencent.mm.opensdk.diffdev.IDiffDevOAuth;
-import com.tencent.mm.opensdk.diffdev.IDiffDevOAuth.OAuthListener;
+import com.tencent.mm.opensdk.diffdev.OAuthListener;
+import com.tencent.mm.opensdk.diffdev.OAuthErrCode;
 import com.tencent.mm.opensdk.diffdev.DiffDevOAuthFactory;
 
 import java.io.BufferedInputStream;
@@ -243,7 +244,7 @@ public class WeChatLibModule extends ReactContextBaseJavaModule implements IWXAP
             return;
         }
         try {
-            diffDevOAuth.stopOAuth();
+            diffDevOAuth.stopAuth();
             callback.invoke(null, true);
         } catch (Exception e) {
             callback.invoke(e.getMessage());
@@ -1065,11 +1066,11 @@ public class WeChatLibModule extends ReactContextBaseJavaModule implements IWXAP
     }
 
     @Override
-    public void onAuthFinish(IDiffDevOAuth.OAuthErrCode errCode, String authCode) {
+    public void onAuthFinish(OAuthErrCode errCode, String authCode) {
         WritableMap map = Arguments.createMap();
         map.putString("type", "WechatAuth.Finish");
         map.putInt("errCode", errCode.ordinal());
-        if (errCode == IDiffDevOAuth.OAuthErrCode.WechatAuth_Err_Ok && authCode != null) {
+        if (errCode == OAuthErrCode.WechatAuth_Err_Ok && authCode != null) {
             map.putString("authCode", authCode);
         }
         this.getReactApplicationContext()

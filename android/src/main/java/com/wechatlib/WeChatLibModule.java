@@ -1070,7 +1070,7 @@ public class WeChatLibModule extends ReactContextBaseJavaModule implements IWXAP
         WritableMap map = Arguments.createMap();
         map.putString("type", "WechatAuth.Finish");
         map.putInt("errCode", errCode.ordinal());
-        if (errCode == OAuthErrCode.WechatAuth_Err_Ok && authCode != null) {
+        if (errCode == OAuthErrCode.WechatAuth_Err_OK && authCode != null) {
             map.putString("authCode", authCode);
         }
         this.getReactApplicationContext()
